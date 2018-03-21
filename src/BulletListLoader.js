@@ -3,7 +3,6 @@ import ContentLoader from './ContentLoader'
 export default {
   name: 'BulletListLoader',
   functional: true,
-  props: ContentLoader.props,
   render(h, { data }) {
     return (
       <ContentLoader {...data}>

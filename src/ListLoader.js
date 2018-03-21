@@ -3,7 +3,6 @@ import ContentLoader from './ContentLoader'
 export default {
   name: 'ListLoader',
   functional: true,
-  props: ContentLoader.props,
   render(h, { data }) {
     return (
       <ContentLoader {...data}>
