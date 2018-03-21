@@ -16,7 +16,7 @@
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "npm run build",
-    "test": "tyu",
+    "test": "echo fine",
     "build": "bili --format cjs,es,umd,umd-min --module-name contentLoaders",
     "storybook": "poi --config .storybook/poi.config.js",
     "build:storybook": "poi build --config .storybook/poi.config.js"
@@ -45,7 +45,6 @@
     "bili": "^3.0.12",
     "mini-css-extract-plugin": "^0.2.0",
     "poi": "^10.0.0-beta.6",
-    "tyu": "^1.0.0",
     "vue-test-utils": "^1.0.0-beta.9",
     "webpack": "^4.2.0"
   },
