@@ -31,13 +31,6 @@
     "dist": "example/dist",
     "homepage": "./"
   },
-  "bili": {
-    "format": [
-      "cjs",
-      "umd"
-    ],
-    "name": "vue-content-loader"
-  },
   "devDependencies": {
     "@poi/plugin-storybook": "^10.0.0-beta.2",
     "@storybook/vue": "^3.3.15",
