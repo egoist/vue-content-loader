@@ -1,6 +1,6 @@
 {
   "name": "@rem/vue-content-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SVG component to create placeholder loading, like Facebook cards loading.",
   "repository": {
     "url": "egoist/vue-content-loader",
