@@ -78,6 +78,9 @@ This is also how [ListLoader](./src/ListLoader.js) is created.
 |uniquekey|string|`randomId()`|Unique ID, you need to change it for SSR|
 |animate|boolean|`true`||
 
+## Credits
+
+This is basically a Vue port for [react-content-loader](https://github.com/danilowoz/react-content-loader).
 
 ## License
 
