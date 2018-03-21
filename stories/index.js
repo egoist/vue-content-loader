@@ -7,6 +7,7 @@ import {
   InstagramLoader,
   ListLoader
 } from '../src'
+import './AddGitHubCorner'
 
 const Container = {
   functional: true,
