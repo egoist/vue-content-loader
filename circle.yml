@@ -21,4 +21,4 @@ jobs:
             - ./node_modules
       - run:
           name: test
-          command: yarn run test:cov
+          command: yarn run test
