@@ -1,6 +1,6 @@
 # vue-content-loader
 
-[![NPM version](https://img.shields.io/npm/v/vue-content-loader.svg?style=flat)](https://npmjs.com/package/vue-content-loader) [![NPM downloads](https://img.shields.io/npm/dm/vue-content-loader.svg?style=flat)](https://npmjs.com/package/vue-content-loader) [![CircleCI](https://circleci.com/gh/egoist/vue-content-loader/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/vue-content-loader/tree/master)
+[![NPM version](https://img.shields.io/npm/v/@rem/vue-content-loader.svg?style=flat)](https://npmjs.com/package/@rem/vue-content-loader) [![NPM downloads](https://img.shields.io/npm/dm/@rem/vue-content-loader.svg?style=flat)](https://npmjs.com/package/@rem/vue-content-loader) [![CircleCI](https://circleci.com/gh/egoist/vue-content-loader/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/vue-content-loader/tree/master)
 
 SVG component to create placeholder loading, like Facebook cards loading.
 
