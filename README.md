@@ -62,6 +62,8 @@ import {
 
 This is also how [ListLoader](./src/ListLoader.js) is created.
 
+You can also use the [online tool](http://danilowoz.com/create-react-content-loader/) to create shapes for your custom loader, it's made for [react-content-loader](https://github.com/danilowoz/react-content-loader) but the JSX it generates can be used in Vue templates or Vue JSX as well.
+
 ## API
 
 ### Props
