@@ -1,6 +1,6 @@
 # vue-content-loader
 
-[![NPM version](https://img.shields.io/npm/v/@rem/vue-content-loader.svg?style=flat)](https://npmjs.com/package/@rem/vue-content-loader) [![NPM downloads](https://img.shields.io/npm/dm/@rem/vue-content-loader.svg?style=flat)](https://npmjs.com/package/@rem/vue-content-loader) [![CircleCI](https://circleci.com/gh/egoist/vue-content-loader/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/vue-content-loader/tree/master)
+[![NPM version](https://img.shields.io/npm/v/vue-content-loader.svg?style=flat)](https://npmjs.com/package/vue-content-loader) [![NPM downloads](https://img.shields.io/npm/dm/vue-content-loader.svg?style=flat)](https://npmjs.com/package/vue-content-loader) [![CircleCI](https://circleci.com/gh/egoist/vue-content-loader/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/vue-content-loader/tree/master)
 
 SVG component to create placeholder loading, like Facebook cards loading.
 
@@ -21,12 +21,10 @@ This is a Vue port for [react-content-loader](https://github.com/danilowoz/react
 ## Install
 
 ```bash
-yarn add @rem/vue-content-loader
+yarn add vue-content-loader
 ```
 
-__NOTE: You're installing `@rem/vue-content-loader` instead of `vue-content-loader`.__
-
-CDN: [UNPKG](https://unpkg.com/@rem/vue-content-loader/) | [jsDelivr](https://cdn.jsdelivr.net/npm/@rem/vue-content-loader/) (available as `window.contentLoaders`)
+CDN: [UNPKG](https://unpkg.com/vue-content-loader/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vue-content-loader/) (available as `window.contentLoaders`)
 
 ## Usage
 
@@ -36,7 +34,7 @@ CDN: [UNPKG](https://unpkg.com/@rem/vue-content-loader/) | [jsDelivr](https://cd
 </template>
 
 <script>
-import { ContentLoader } from '@rem/vue-content-loader'
+import { ContentLoader } from 'vue-content-loader'
 
 export default {
   components: {
@@ -58,7 +56,7 @@ import {
   BulletListLoader,
   InstagramLoader,
   ListLoader
-} from '@rem/vue-content-loader'
+} from 'vue-content-loader'
 ```
 
 `ContentLoader` is a meta loader while other loaders are just higher-order components of it. By default `ContentLoader` only displays a simple rectangle, here's how you can use it to create custom loaders:
