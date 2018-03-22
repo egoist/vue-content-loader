@@ -109,7 +109,7 @@ storiesOf('ContentLoader', module)
     render() {
       return (
         <Container>
-          <ContentLoader uniquekey="unique-key" />
+          <ContentLoader uniqueKey="unique-key" />
         </Container>
       )
     }

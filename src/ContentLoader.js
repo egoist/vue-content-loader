@@ -30,7 +30,7 @@ export default {
       type: String,
       default: '#ecebeb'
     },
-    uniquekey: {
+    uniqueKey: {
       type: String
     },
     animate: {
@@ -40,8 +40,8 @@ export default {
   },
 
   render(h, { props, data, children }) {
-    const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
-    const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
+    const idClip = props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
+    const idGradient = props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
 
     return (
       <svg
