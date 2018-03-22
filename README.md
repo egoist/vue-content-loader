@@ -4,6 +4,8 @@
 
 SVG component to create placeholder loading, like Facebook cards loading.
 
+![preview](https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif)
+
 ## Features
 
 This is a Vue port for [react-content-loader](https://github.com/danilowoz/react-content-loader).
