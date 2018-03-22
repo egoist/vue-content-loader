@@ -28,6 +28,8 @@ CDN: [UNPKG](https://unpkg.com/vue-content-loader/) | [jsDelivr](https://cdn.jsd
 
 ## Usage
 
+👀👉 Demos: [Storybook](https://vue-content-loader.egoist.moe) | [with Nuxt.js](https://glitch.com/edit/#!/vue-content-loader)
+
 ```vue
 <template>
   <content-loader></content-loader>
@@ -43,8 +45,6 @@ export default {
 }
 </script>
 ```
-
-🔥 [Check out the __storybook__ to see how it rocks!](https://vue-content-loader.egoist.moe)
 
 ### Built-in loaders
 
