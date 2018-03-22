@@ -96,6 +96,8 @@ You can also use the [online tool](http://danilowoz.com/create-react-content-loa
 
 This is basically a Vue port for [react-content-loader](https://github.com/danilowoz/react-content-loader).
 
+[Thanks to @alidcastano for transferring the package name to me.](https://github.com/egoist/vue-content-loader/issues/1) 😘
+
 ## License
 
 MIT &copy; [EGOIST](https://github.com/egoist)
