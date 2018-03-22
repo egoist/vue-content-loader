@@ -7,6 +7,10 @@
     "type": "git"
   },
   "main": "dist/vue-content-loader.cjs.js",
+  "module": "dist/vue-content-loader.es.js",
+  "cdn": "dist/vue-content-loader.min.js",
+  "unpkg": "dist/vue-content-loader.min.js",
+  "jsdelivr": "dist/vue-content-loader.min.js",
   "files": [
     "dist"
   ],
