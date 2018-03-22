@@ -91,7 +91,7 @@ You can also use the [online tool](http://danilowoz.com/create-react-content-loa
 |preserveAspectRatio|string|`'xMidYMid meet'`||
 |primaryColor|string|`'#f9f9f9'`||
 |secondaryColor|string|`'#ecebeb'`||
-|uniquekey|string|`randomId()`|Unique ID, you need to change it for SSR|
+|uniquekey|string|`randomId()`|Unique ID, you need to make it consistent for SSR|
 |animate|boolean|`true`||
 
 ## Credits
