@@ -11,7 +11,7 @@ SVG component to create placeholder loading, like Facebook cards loading.
 This is a Vue port for [react-content-loader](https://github.com/danilowoz/react-content-loader).
 
 - Completely customizable: you can change the colors, speed and sizes.
-- Create your own loading: use the [online tool](https://danilowoz.github.io/create-react-content-loader/) to create your custom loader easily.
+- Create your own loading: use the [online tool](http://danilowoz.com/create-content-loader/) to create your custom loader easily.
 - You can use it right now: there are a lot of presets already.
 - Performance:
   - Tree-shakable and highly optimized bundle.
@@ -74,7 +74,7 @@ import {
 
 This is also how [ListLoader](./src/ListLoader.js) is created.
 
-You can also use the [online tool](http://danilowoz.com/create-react-content-loader/) to create shapes for your custom loader, it's made for [react-content-loader](https://github.com/danilowoz/react-content-loader) but the JSX it generates can be used in Vue templates or Vue JSX as well.
+You can also use the [online tool](http://danilowoz.com/create-content-loader/ to create shapes for your custom loader/
 
 ## API
 
