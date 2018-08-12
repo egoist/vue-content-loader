@@ -83,8 +83,8 @@ You can also use the [online tool](http://danilowoz.com/create-content-loader/ t
 
 |Prop|Type|Default|Description|
 |---|---|---|---|
-|width|number|`400`||
-|height|number|`130`||
+|width|string|`400px`||
+|height|string|`130px`||
 |speed|number|`2`||
 |preserveAspectRatio|string|`'xMidYMid meet'`||
 |primaryColor|string|`'#f9f9f9'`||
