@@ -5,7 +5,9 @@ import {
   CodeLoader,
   BulletListLoader,
   InstagramLoader,
-  ListLoader
+  ListLoader,
+  BarChartLoader,
+  LineChartLoader
 } from '../src'
 
 const Container = {
@@ -74,6 +76,24 @@ storiesOf('ContentLoader', module)
       return (
         <Container>
           <BulletListLoader />
+        </Container>
+      )
+    }
+  }))
+  .add('bar chart style', () => ({
+    render() {
+      return (
+        <Container>
+          <BarChartLoader />
+        </Container>
+      )
+    }
+  }))
+  .add('line chart style', () => ({
+    render() {
+      return (
+        <Container>
+          <LineChartLoader />
         </Container>
       )
     }
