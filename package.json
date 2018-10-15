@@ -7,7 +7,7 @@
     "type": "git"
   },
   "main": "dist/vue-content-loader.cjs.js",
-  "types": "src/vue-content-loader.d.ts"
+  "types": "src/vue-content-loader.d.ts",
   "module": "dist/vue-content-loader.es.js",
   "cdn": "dist/vue-content-loader.min.js",
   "unpkg": "dist/vue-content-loader.min.js",
