@@ -74,7 +74,7 @@ import {
 
 This is also how [ListLoader](./src/ListLoader.js) is created.
 
-You can also use the [online tool](http://danilowoz.com/create-content-loader/ to create shapes for your custom loader/
+You can also use the [online tool](http://danilowoz.com/create-content-loader/) to create shapes for your custom loader.
 
 ## API
 
