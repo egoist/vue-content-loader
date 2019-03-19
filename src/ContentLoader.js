@@ -36,6 +36,9 @@ export default {
     animate: {
       type: Boolean,
       default: true
+    },
+    baseUrl: {
+      type: String
     }
   },
 
@@ -51,8 +54,8 @@ export default {
         preserveAspectRatio={props.preserveAspectRatio}
       >
         <rect
-          style={{ fill: `url(#${idGradient})` }}
-          clip-path={`url(#${idClip})`}
+          style={{ fill: `url(${baseUrl}#${idGradient})` }}
+          clipPath={`url(${baseUrl}#${idClip})`}
           x="0"
           y="0"
           width={props.width}
