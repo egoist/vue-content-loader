@@ -33,7 +33,7 @@
     "homepage": "./"
   },
   "devDependencies": {
-    "@poi/plugin-storybook": "^10.0.0-rc.2",
+    "@poi/plugin-storybook": "^11.0.1",
     "@storybook/vue": "^3.3.15",
     "babel-plugin-transform-vue-jsx": "^4",
     "bili": "^3.0.12",

@@ -1170,9 +1170,9 @@
     chalk "^2.3.2"
     log-horizon "^0.1.1"
 
-"@poi/plugin-storybook@^10.0.0-rc.2":
-  version "10.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@poi/plugin-storybook/-/plugin-storybook-10.0.0-rc.2.tgz#c1ced3add7f6f89e59f9178987731388fc74cc25"
+"@poi/plugin-storybook@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@poi/plugin-storybook/-/plugin-storybook-11.0.1.tgz#411e5b91af29fa1aa4e64e4fb29ca969ac4c27d3"
   dependencies:
     html-loader "^0.5.5"
     markdown-loader "^2.0.2"
