@@ -22,6 +22,10 @@ export default {
       type: String,
       default: 'xMidYMid meet'
     },
+    baseUrl: {
+      type: String,
+      default: ''
+    },
     primaryColor: {
       type: String,
       default: '#f9f9f9'
@@ -29,6 +33,14 @@ export default {
     secondaryColor: {
       type: String,
       default: '#ecebeb'
+    },
+    primaryOpacity: {
+      type: Number,
+      default: 1
+    },
+    secondaryOpacity: {
+      type: Number,
+      default: 1
     },
     uniqueKey: {
       type: String
@@ -51,8 +63,8 @@ export default {
         preserveAspectRatio={props.preserveAspectRatio}
       >
         <rect
-          style={{ fill: `url(#${idGradient})` }}
-          clip-path={`url(#${idClip})`}
+          style={{ fill: `url(${props.baseUrl}#${idGradient})` }}
+          clip-path={`url(${props.baseUrl}#${idClip})`}
           x="0"
           y="0"
           width={props.width}
@@ -74,7 +86,7 @@ export default {
           </clipPath>
 
           <linearGradient id={idGradient}>
-            <stop offset="0%" stop-color={props.primaryColor}>
+            <stop offset="0%" stop-color={props.primaryColor} stop-opacity={props.primaryOpacity}>
               {props.animate ? (
                 <animate
                   attributeName="offset"
@@ -84,7 +96,7 @@ export default {
                 />
               ) : null}
             </stop>
-            <stop offset="50%" stop-color={props.secondaryColor}>
+            <stop offset="50%" stop-color={props.secondaryColor} stop-opacity={props.secondaryOpacity}>
               {props.animate ? (
                 <animate
                   attributeName="offset"
@@ -94,7 +106,7 @@ export default {
                 />
               ) : null}
             </stop>
-            <stop offset="100%" stop-color={props.primaryColor}>
+            <stop offset="100%" stop-color={props.primaryColor} stop-opacity={props.primaryOpacity}>
               {props.animate ? (
                 <animate
                   attributeName="offset"

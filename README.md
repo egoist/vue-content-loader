@@ -91,6 +91,10 @@ You can also use the [online tool](https://create-vue-content-loader.netlify.com
 |secondaryColor|string|`'#ecebeb'`||
 |uniqueKey|string|`randomId()`|Unique ID, you need to make it consistent for SSR|
 |animate|boolean|`true`||
+|baseUrl|string|empty string|Required if you're using <base url="/" /> in your <head/>. Defaults to an empty string. This prop is common used as: <content-loader :base-url="$route.fullPath" /> which will fill the SVG attribute with the relative path. Related [#14](https://github.com/egoist/vue-content-loader/issues/14).|
+|primaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
+|secondaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
+
 
 ## Credits
 
