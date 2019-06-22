@@ -19,27 +19,23 @@
     "prepublishOnly": "npm run build",
     "test": "echo fine",
     "build": "bili --format cjs,es,umd,umd-min --module-name contentLoaders",
-    "storybook": "poi --config .storybook/poi.config.js",
-    "build:storybook": "poi build --config .storybook/poi.config.js"
+    "storybook": "poi -so --config stories/poi.config.js",
+    "build:storybook": "poi --prod --config stories/poi.config.js"
   },
   "author": {
     "name": "EGOIST",
     "email": "0x142857@gmail.com"
   },
   "license": "MIT",
-  "poi": {
-    "entry": "example/index.js",
-    "dist": "example/dist",
-    "homepage": "./"
-  },
   "devDependencies": {
-    "@poi/plugin-storybook": "^10.0.0-rc.2",
-    "@storybook/vue": "^3.3.15",
+    "@types/poi": "^12.5.0",
     "babel-plugin-transform-vue-jsx": "^4",
     "bili": "^3.0.12",
-    "poi": "^10.0.0-rc.6",
-    "vue-test-utils": "^1.0.0-beta.9",
-    "webpack": "^4.2.0"
+    "poi": "^12.6.10",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
+    "vue-template-compiler": "^2.6.10",
+    "vue-test-utils": "^1.0.0-beta.9"
   },
   "dependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.3"

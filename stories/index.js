@@ -1,4 +1,4 @@
-import { storiesOf } from '@storybook/vue'
+import { createStorybook } from './storybook'
 import {
   ContentLoader,
   FacebookLoader,
@@ -32,94 +32,134 @@ const MyLoader = {
   }
 }
 
-storiesOf('ContentLoader', module)
-  .add('facebook style', () => ({
-    render() {
-      return (
-        <Container>
-          <FacebookLoader />
-        </Container>
-      )
+const storybook = createStorybook({
+  title: 'vue-content-loader'
+})
+
+const section = storybook.addSection({
+  title: 'ContentLoader'
+})
+
+section
+  .addStory({
+    title: 'facebook style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <FacebookLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('instagram style', () => ({
-    render() {
-      return (
-        <Container>
-          <InstagramLoader />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'instagram style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <InstagramLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('code style', () => ({
-    render() {
-      return (
-        <Container>
-          <CodeLoader />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'code style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <CodeLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('list style', () => ({
-    render() {
-      return (
-        <Container>
-          <ListLoader />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'list style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <ListLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('bullet list style', () => ({
-    render() {
-      return (
-        <Container>
-          <BulletListLoader />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'bullet list style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <BulletListLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('custom style', () => ({
-    render() {
-      return (
-        <Container>
-          <MyLoader />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'custom style',
+    component: {
+      render() {
+        return (
+          <Container>
+            <MyLoader />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('className', () => ({
-    render() {
-      return (
-        <Container>
-          <ContentLoader class="random-className" />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'className',
+    component: {
+      render() {
+        return (
+          <Container>
+            <ContentLoader class="random-className" />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('width and height', () => ({
-    render() {
-      return (
-        <Container>
-          <ContentLoader width={400} height={150} />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'width and height',
+    component: {
+      render() {
+        return (
+          <Container>
+            <ContentLoader width={400} height={150} />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('unique-key: for SSR', () => ({
-    render() {
-      return (
-        <Container>
-          <ContentLoader uniqueKey="unique-key" />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'unique-key: for SSR',
+    component: {
+      render() {
+        return (
+          <Container>
+            <ContentLoader uniqueKey="unique-key" />
+          </Container>
+        )
+      }
     }
-  }))
-  .add('no animation', () => ({
-    render() {
-      return (
-        <Container>
-          <FacebookLoader animate={false} />
-        </Container>
-      )
+  })
+  .addStory({
+    title: 'no animation',
+    component: {
+      render() {
+        return (
+          <Container>
+            <FacebookLoader animate={false} />
+          </Container>
+        )
+      }
     }
-  }))
+  })
+
+storybook.open('#app')
