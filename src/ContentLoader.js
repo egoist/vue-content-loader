@@ -1,5 +1,53 @@
 import uid from './uid'
 
+const defaultWidth = 400;
+const defaultHeight = 130;
+
+const getViewBoxSize = (param, _default) =>
+      typeof param === 'number' ? param :
+        'viewBox' in param ?
+          param.viewBox : _default;
+
+const matchContainerSize = (value, who) => {
+      
+  if(typeof value === 'number')
+    return value;
+
+  let match;
+
+  for(let rule in value){
+
+    if(rule === 'viewBox')
+      continue;
+
+    let expression = rule[0];
+
+    if(['>','<'].indexOf(expression) === -1)
+      throw new Error('Invalid expression');
+    
+    let size = parseInt(rule.slice(1));
+
+    let toCompare = who === 'width' ? innerWidth : innerHeight;
+
+    if(expression === '<'){
+
+        if(toCompare < size)
+          match = value[rule];
+
+    } else {
+
+        if(toCompare > size)
+          match = value[rule];
+
+    }
+
+  }
+
+  return (match ||
+    ('viewBox' in value ?
+      value.viewBox : who === 'width' ? defaultWidth : defaultHeight));
+}
+
 export default {
   name: 'ContentLoader',
 
@@ -7,12 +55,12 @@ export default {
 
   props: {
     width: {
-      type: Number,
-      default: 400
+      type: Number | Object,
+      default: defaultWidth
     },
     height: {
-      type: Number,
-      default: 130
+      type: Number | Object,
+      default: defaultHeight
     },
     speed: {
       type: Number,
@@ -55,10 +103,27 @@ export default {
     const idClip = props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
     const idGradient = props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
 
+    let { innerWidth, innerHeight } = window;
+    const { width, height } = props;
+
+    let widthViewBox = getViewBoxSize(width, defaultWidth);
+    let heightViewBox = getViewBoxSize(height, defaultHeight);
+
+    let containerWidth = matchContainerSize(width, 'width');
+    let containerHeight = matchContainerSize(height, 'height');
+
+    if(containerWidth > widthViewBox)
+      widthViewBox = containerWidth;
+
+    if(containerHeight > heightViewBox)
+      heightViewBox = containerHeight;
+
     return (
       <svg
+        width={`${containerWidth}px`}
+        height={`${containerHeight}px`}
         {...data}
-        viewBox={`0 0 ${props.width} ${props.height}`}
+        viewBox={`0 0 ${widthViewBox} ${heightViewBox}`}
         version="1.1"
         preserveAspectRatio={props.preserveAspectRatio}
       >
@@ -67,8 +132,8 @@ export default {
           clip-path={`url(${props.baseUrl}#${idClip})`}
           x="0"
           y="0"
-          width={props.width}
-          height={props.height}
+          width={widthViewBox}
+          height={heightViewBox}
         />
 
         <defs>
@@ -79,8 +144,8 @@ export default {
                 y="0"
                 rx="5"
                 ry="5"
-                width={props.width}
-                height={props.height}
+                width={widthViewBox}
+                height={heightViewBox}
               />
             )}
           </clipPath>
