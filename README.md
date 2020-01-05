@@ -13,6 +13,7 @@ This is a Vue port for [react-content-loader](https://github.com/danilowoz/react
 - Completely customizable: you can change the colors, speed and sizes.
 - Create your own loading: use the [online tool](http://danilowoz.com/create-vue-content-loader/ ) to create your custom loader easily.
 - You can use it right now: there are a lot of presets already.
+- Responsive rules
 - Performance:
   - Tree-shakable and highly optimized bundle.
   - Pure SVG, so it's works without any javascript, canvas, etc.
@@ -83,8 +84,8 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 
 |Prop|Type|Default|Description|
 |---|---|---|---|
-|width|number|`400`||
-|height|number|`130`||
+|width|number&nbsp;\|&nbsp;responsiveRules|`400`| |
+|height|number&nbsp;\|&nbsp;responsiveRules|`130`||
 |speed|number|`2`||
 |preserveAspectRatio|string|`'xMidYMid meet'`||
 |primaryColor|string|`'#f9f9f9'`||
@@ -95,6 +96,15 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 |primaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
 |secondaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
 
+```javascript
+responsiveRules: {
+    viewBox: 300, // original svg size
+    '<800': 200,
+    '<600': 100,
+    '>900': 280,
+    '>1000': 400,
+}
+```
 
 ## Credits
 
