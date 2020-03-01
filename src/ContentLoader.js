@@ -1,4 +1,4 @@
-import uid from './uid'
+import { uid, getViewBoxSize, matchContainerSize, defaultWidth, defaultHeight } from './utils'
 
 export default {
   name: 'ContentLoader',
@@ -7,12 +7,12 @@ export default {
 
   props: {
     width: {
-      type: Number,
-      default: 400
+      type: Number | Object,
+      default: defaultWidth
     },
     height: {
-      type: Number,
-      default: 130
+      type: Number | Object,
+      default: defaultHeight
     },
     speed: {
       type: Number,
@@ -55,10 +55,26 @@ export default {
     const idClip = props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
     const idGradient = props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
 
+    const { width, height } = props;
+
+    let widthViewBox = getViewBoxSize(width, defaultWidth);
+    let heightViewBox = getViewBoxSize(height, defaultHeight);
+
+    const containerWidth = matchContainerSize(width, 'width');
+    const containerHeight = matchContainerSize(height, 'height');
+
+    if (containerWidth > widthViewBox)
+      widthViewBox = containerWidth;
+
+    if (containerHeight > heightViewBox)
+      heightViewBox = containerHeight;
+
     return (
       <svg
         {...data}
-        viewBox={`0 0 ${props.width} ${props.height}`}
+        width={`${containerWidth}px`}
+        height={`${containerHeight}px`}
+        viewBox={`0 0 ${widthViewBox} ${heightViewBox}`}
         version="1.1"
         preserveAspectRatio={props.preserveAspectRatio}
       >
@@ -67,8 +83,8 @@ export default {
           clip-path={`url(${props.baseUrl}#${idClip})`}
           x="0"
           y="0"
-          width={props.width}
-          height={props.height}
+          width={widthViewBox}
+          height={heightViewBox}
         />
 
         <defs>
@@ -79,8 +95,8 @@ export default {
                 y="0"
                 rx="5"
                 ry="5"
-                width={props.width}
-                height={props.height}
+                width={widthViewBox}
+                height={heightViewBox}
               />
             )}
           </clipPath>

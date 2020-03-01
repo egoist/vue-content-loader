@@ -138,6 +138,27 @@ section
     }
   })
   .addStory({
+    title: 'responsive size',
+    component: {
+      render() {
+        return (
+          <Container>
+            <ContentLoader
+              width={{
+                viewBox: 300, // original svg draw size
+                '<800': 200,
+                '<600': 100,
+                '>900': 280,
+                '>1000': 400,
+              }} height={150}
+              primaryColor={'#333'}
+              secondaryColor={'#999'} />
+          </Container>
+        )
+      }
+    }
+  })
+  .addStory({
     title: 'unique-key: for SSR',
     component: {
       render() {
