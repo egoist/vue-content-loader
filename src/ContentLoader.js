@@ -7,11 +7,11 @@ export default {
 
   props: {
     width: {
-      type: Number,
+      type: [Number, String],
       default: 400
     },
     height: {
-      type: Number,
+      type: [Number, String],
       default: 130
     },
     speed: {
