@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/poi": "^12.5.0",
     "babel-plugin-transform-vue-jsx": "^4",
-    "bili": "^3.0.12",
+    "bili": "^4.9.2",
     "poi": "^12.6.10",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
