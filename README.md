@@ -23,6 +23,9 @@ This is a Vue port for [react-content-loader](https://github.com/danilowoz/react
 ```bash
 yarn add vue-content-loader
 ```
+```bash
+npm i vue-content-loader
+```
 
 CDN: [UNPKG](https://unpkg.com/vue-content-loader/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vue-content-loader/) (available as `window.contentLoaders`)
 
