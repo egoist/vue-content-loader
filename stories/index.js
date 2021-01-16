@@ -10,8 +10,12 @@ import {
 
 const Container = {
   functional: true,
-  render(h, { children }) {
-    return <div style={{ width: '400px', margin: '0 auto' }}>{children}</div>
+  render() {
+    return (
+      <div style={{ width: '400px', margin: '0 auto' }}>
+        {this.$slots.default()}
+      </div>
+    )
   }
 }
 

@@ -1,8 +1,6 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createApp, h } from 'vue'
+import { createRouter, createWebHashHistory, RouterView } from 'vue-router'
 import StorybookRoot from './Storybook.vue'
-
-Vue.use(Router)
 
 export const createStorybook = opts => new Storybook(opts)
 
@@ -15,24 +13,25 @@ class Storybook {
   }
 
   open(target) {
-    const router = new Router({
-      mode: 'history',
-      routes: [{
-        path: '*',
-        component: StorybookRoot,
-        props: {
-          sections: this.sections.map(section => section.toObject()),
-          site: this.site
+    const router = createRouter({
+      history: createWebHashHistory(),
+      routes: [
+        {
+          path: '/:pathMatch(.*)*',
+          component: StorybookRoot,
+          props: {
+            sections: this.sections.map(section => section.toObject()),
+            site: this.site
+          }
         }
-      }]
+      ]
     })
 
-    const vm = new Vue({
-      router,
-      render: h => h('router-view')
+    const vm = createApp({
+      render: () => h(RouterView)
     })
-
-    vm.$mount(target)
+      .use(router)
+      .mount(target)
 
     return this
   }
