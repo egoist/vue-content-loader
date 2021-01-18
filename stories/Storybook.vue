@@ -2,21 +2,31 @@
   <div>
     <div class="sidebar">
       <div class="sections">
-        <div class="section" v-for="(section, sectionIndex) in sections" :key="sectionIndex">
+        <div
+          class="section"
+          v-for="(section, sectionIndex) in sections"
+          :key="sectionIndex"
+        >
           <div class="section-title">{{ section.title }}</div>
           <div class="stories">
             <router-link
               :to="{ query: { section: section.title, story: story.title } }"
-              class="story-title"
+              :class="[
+                `story-title`,
+                $route.query.story === story.title &&
+                  $route.query.section === section.title &&
+                  `is-active`
+              ]"
               v-for="(story, storyIndex) in section.stories"
               :key="storyIndex"
-            >{{ story.title }}</router-link>
+              >{{ story.title }}</router-link
+            >
           </div>
         </div>
       </div>
     </div>
     <div class="main">
-      <component :is="currentComponent"/>
+      <component :is="currentComponent" />
     </div>
   </div>
 </template>
@@ -107,7 +117,7 @@ export default {
   background: #f9f9f9;
 }
 
-.story-title.router-link-exact-active {
+.story-title.is-active {
   background: #f0f0f0;
 }
 
