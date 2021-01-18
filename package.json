@@ -17,7 +17,8 @@
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "npm run build",
-    "test": "echo fine",
+    "test": "jest",
+    "test:dev": "jest --watch",
     "build": "bili",
     "storybook": "poi -so --config stories/poi.config.js",
     "build:storybook": "poi --prod --config stories/poi.config.js"
@@ -28,10 +29,15 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@types/poi": "^12.5.0",
     "@vue/babel-plugin-jsx": "^1.0.2",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/test-utils": "^2.0.0-beta.14",
+    "babel-jest": "^26.6.3",
     "bili": "^5.0.5",
+    "jest": "^26.6.3",
     "poi": "12.10.3",
     "vue": "^3.0.5",
     "vue-loader": "^16.1.2",
