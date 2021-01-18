@@ -35,7 +35,6 @@
     "poi": "12.10.3",
     "vue": "^3.0.5",
     "vue-loader": "^16.1.2",
-    "vue-router": "^4.0.3",
-    "vue-test-utils": "^1.0.0-beta.9"
+    "vue-router": "^4.0.3"
   }
 }
