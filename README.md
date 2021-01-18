@@ -20,8 +20,12 @@ This is a Vue port for [react-content-loader](https://github.com/danilowoz/react
 
 ## Install
 
+Note: For Vue 2, use `vue-content-loader@^0.2` instead.
+
 ```bash
 yarn add vue-content-loader
+# For Vue 2
+# yarn add vue-content-loader@^0.2
 ```
 
 CDN: [UNPKG](https://unpkg.com/vue-content-loader/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vue-content-loader/) (available as `window.contentLoaders`)
@@ -74,27 +78,25 @@ import {
 
 This is also how [ListLoader](./src/ListLoader.js) is created.
 
-You can also use the [online tool](http://danilowoz.com/create-vue-content-loader/ ) to create shapes for your custom loader.
+You can also use the [online tool](http://danilowoz.com/create-vue-content-loader/) to create shapes for your custom loader.
 
 ## API
 
 ### Props
 
-
-|Prop|Type|Default|Description|
-|---|---|---|---|
-|width|number|`400`||
-|height|number|`130`||
-|speed|number|`2`||
-|preserveAspectRatio|string|`'xMidYMid meet'`||
-|primaryColor|string|`'#f9f9f9'`||
-|secondaryColor|string|`'#ecebeb'`||
-|uniqueKey|string|`randomId()`|Unique ID, you need to make it consistent for SSR|
-|animate|boolean|`true`||
-|baseUrl|string|empty string|Required if you're using `<base url="/" />` in your `<head />`. Defaults to an empty string. This prop is common used as: `<content-loader :base-url="$route.fullPath" />` which will fill the SVG attribute with the relative path. Related [#14](https://github.com/egoist/vue-content-loader/issues/14).|
-|primaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
-|secondaryOpacity|number|`1`|Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari|
-
+| Prop                | Type    | Default           | Description                                                                                                                                                                                                                                                                                                 |
+| ------------------- | ------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| width               | number  | `400`             |                                                                                                                                                                                                                                                                                                             |
+| height              | number  | `130`             |                                                                                                                                                                                                                                                                                                             |
+| speed               | number  | `2`               |                                                                                                                                                                                                                                                                                                             |
+| preserveAspectRatio | string  | `'xMidYMid meet'` |                                                                                                                                                                                                                                                                                                             |
+| primaryColor        | string  | `'#f9f9f9'`       |                                                                                                                                                                                                                                                                                                             |
+| secondaryColor      | string  | `'#ecebeb'`       |                                                                                                                                                                                                                                                                                                             |
+| uniqueKey           | string  | `randomId()`      | Unique ID, you need to make it consistent for SSR                                                                                                                                                                                                                                                           |
+| animate             | boolean | `true`            |                                                                                                                                                                                                                                                                                                             |
+| baseUrl             | string  | empty string      | Required if you're using `<base url="/" />` in your `<head />`. Defaults to an empty string. This prop is common used as: `<content-loader :base-url="$route.fullPath" />` which will fill the SVG attribute with the relative path. Related [#14](https://github.com/egoist/vue-content-loader/issues/14). |
+| primaryOpacity      | number  | `1`               | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
+| secondaryOpacity    | number  | `1`               | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
 
 ## Credits
 
