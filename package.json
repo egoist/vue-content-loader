@@ -36,5 +36,8 @@
     "vue": "^3.0.5",
     "vue-loader": "^16.1.2",
     "vue-router": "^4.0.3"
+  },
+  "peerDependencies": {
+    "vue": "^3"
   }
 }
