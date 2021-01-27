@@ -38,7 +38,7 @@ CDN: [UNPKG](https://unpkg.com/vue-content-loader/) | [jsDelivr](https://cdn.jsd
 
 ## Usage
 
-👀👉 Demos: [Storybook](https://vue-content-loader.egoist.moe) | [with Nuxt.js](https://glitch.com/edit/#!/vue-content-loader)
+👀👉 Demo: [CodeSandbox](https://codesandbox.io/s/vue-content-loader-igfyf?file=/src/App.vue)
 
 ```vue
 <template>
