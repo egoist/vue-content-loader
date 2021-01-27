@@ -6,20 +6,21 @@ export default defineComponent({
 
   props: {
     width: {
-      type: [Number, String],
-      default: 400
+      type: [Number, String]
     },
     height: {
-      type: [Number, String],
-      default: 130
+      type: [Number, String]
     },
-    speed: {
-      type: Number,
-      default: 2
+    viewBox: {
+      type: String
     },
     preserveAspectRatio: {
       type: String,
       default: 'xMidYMid meet'
+    },
+    speed: {
+      type: Number,
+      default: 2
     },
     baseUrl: {
       type: String,
@@ -53,17 +54,23 @@ export default defineComponent({
   setup(props) {
     const idClip = props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
     const idGradient = props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
+    const width = props.width ?? 400
+    const height = props.height ?? 130
+    const computedViewBox = props.viewBox ?? `0 0 ${width} ${height}`
 
     return {
       idClip,
-      idGradient
+      idGradient,
+      computedViewBox
     }
   },
 
   render() {
     return (
       <svg
-        viewBox={`0 0 ${this.width} ${this.height}`}
+        width={this.width}
+        height={this.height}
+        viewBox={this.computedViewBox}
         version="1.1"
         preserveAspectRatio={this.preserveAspectRatio}
       >
@@ -72,8 +79,8 @@ export default defineComponent({
           clip-path={`url(${this.baseUrl}#${this.idClip})`}
           x="0"
           y="0"
-          width={this.width}
-          height={this.height}
+          width="100%"
+          height="100%"
         />
 
         <defs>
@@ -81,14 +88,7 @@ export default defineComponent({
             {this.$slots.default ? (
               this.$slots.default()
             ) : (
-              <rect
-                x="0"
-                y="0"
-                rx="5"
-                ry="5"
-                width={this.width}
-                height={this.height}
-              />
+              <rect x="0" y="0" rx="5" ry="5" width="100%" height="100%" />
             )}
           </clipPath>
 

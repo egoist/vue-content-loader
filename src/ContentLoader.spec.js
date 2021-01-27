@@ -5,8 +5,8 @@ describe('ContentLoader', () => {
   it('has default values for props', () => {
     const wrapper = mount(ContentLoader)
 
-    expect(wrapper.vm.width).toBe(400)
-    expect(wrapper.vm.height).toBe(130)
+    expect(wrapper.vm.width).toBe(undefined)
+    expect(wrapper.vm.height).toBe(undefined)
     expect(wrapper.vm.speed).toBe(2)
     expect(wrapper.vm.preserveAspectRatio).toBe('xMidYMid meet')
     expect(wrapper.vm.baseUrl).toBe('')
@@ -14,6 +14,7 @@ describe('ContentLoader', () => {
     expect(wrapper.vm.secondaryColor).toBe('#ecebeb')
     expect(wrapper.vm.primaryOpacity).toBe(1)
     expect(wrapper.vm.secondaryOpacity).toBe(1)
+    expect(wrapper.vm.uniqueKey).toBe(undefined)
     expect(wrapper.vm.animate).toBe(true)
   })
 
@@ -27,6 +28,8 @@ describe('ContentLoader', () => {
     })
 
     expect(wrapper.find('svg').attributes()).toEqual({
+      width: '300',
+      height: '200',
       preserveAspectRatio: 'xMaxYMid slice',
       version: '1.1',
       viewBox: '0 0 300 200'
@@ -43,6 +46,8 @@ describe('ContentLoader', () => {
     })
 
     expect(wrapper.find('svg').attributes()).toEqual({
+      width: '300',
+      height: '200',
       preserveAspectRatio: 'xMaxYMid slice',
       version: '1.1',
       viewBox: '0 0 300 200'
@@ -57,8 +62,8 @@ describe('ContentLoader', () => {
       'clip-path': `url(#${wrapper.vm.idClip})`,
       x: '0',
       y: '0',
-      width: '400',
-      height: '130'
+      width: '100%',
+      height: '100%'
     })
   })
 
@@ -143,8 +148,8 @@ describe('ContentLoader', () => {
       y: '0',
       rx: '5',
       ry: '5',
-      width: '400',
-      height: '130'
+      width: '100%',
+      height: '100%'
     })
   })
 

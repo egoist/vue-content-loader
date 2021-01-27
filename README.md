@@ -72,7 +72,7 @@ import {
 `ContentLoader` is a meta loader while other loaders are just higher-order components of it. By default `ContentLoader` only displays a simple rectangle, here's how you can use it to create custom loaders:
 
 ```vue
-<ContentLoader>
+<ContentLoader viewBox="0 0 250 110">
   <rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
   <rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
   <rect x="20" y="40" rx="3" ry="3" width="170" height="10" />
@@ -90,19 +90,42 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 
 ### Props
 
-| Prop                | Type    | Default           | Description                                                                                                                                                                                                                                                                                                 |
-| ------------------- | ------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| width               | number  | `400`             |                                                                                                                                                                                                                                                                                                             |
-| height              | number  | `130`             |                                                                                                                                                                                                                                                                                                             |
-| speed               | number  | `2`               |                                                                                                                                                                                                                                                                                                             |
-| preserveAspectRatio | string  | `'xMidYMid meet'` |                                                                                                                                                                                                                                                                                                             |
-| primaryColor        | string  | `'#f9f9f9'`       |                                                                                                                                                                                                                                                                                                             |
-| secondaryColor      | string  | `'#ecebeb'`       |                                                                                                                                                                                                                                                                                                             |
-| uniqueKey           | string  | `randomId()`      | Unique ID, you need to make it consistent for SSR                                                                                                                                                                                                                                                           |
-| animate             | boolean | `true`            |                                                                                                                                                                                                                                                                                                             |
-| baseUrl             | string  | empty string      | Required if you're using `<base url="/" />` in your `<head />`. Defaults to an empty string. This prop is common used as: `<content-loader :base-url="$route.fullPath" />` which will fill the SVG attribute with the relative path. Related [#14](https://github.com/egoist/vue-content-loader/issues/14). |
-| primaryOpacity      | number  | `1`               | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
-| secondaryOpacity    | number  | `1`               | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
+| Prop                | Type           | Default                                  | Description                                                                                                                                                                                                                                                                                                 |
+| ------------------- | -------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| width               | number, string |                                          | SVG width in pixels without unit                                                                                                                                                                                                                                                                            |
+| height              | number, string |                                          | SVG height in pixels without unit                                                                                                                                                                                                                                                                           |
+| viewBox             | string         | `'0 0 ${width || 400} ${height || 130}'` | See [SVG viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute                                                                                                                                                                                                             |
+| preserveAspectRatio | string         | `'xMidYMid meet'`                        | See [SVG preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute                                                                                                                                                                                     |
+| speed               | number         | `2`                                      | Animation speed                                                                                                                                                                                                                                                                                             |
+| primaryColor        | string         | `'#f9f9f9'`                              | Background color                                                                                                                                                                                                                                                                                            |
+| secondaryColor      | string         | `'#ecebeb'`                              | Highlight color                                                                                                                                                                                                                                                                                             |
+| uniqueKey           | string         | `randomId()`                             | Unique ID, you need to make it consistent for SSR                                                                                                                                                                                                                                                           |
+| animate             | boolean        | `true`                                   |                                                                                                                                                                                                                                                                                                             |
+| baseUrl             | string         | empty string                             | Required if you're using `<base url="/" />` in your `<head />`. Defaults to an empty string. This prop is common used as: `<content-loader :base-url="$route.fullPath" />` which will fill the SVG attribute with the relative path. Related [#14](https://github.com/egoist/vue-content-loader/issues/14). |
+| primaryOpacity      | number         | `1`                                      | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
+| secondaryOpacity    | number         | `1`                                      | Background opacity (0 = transparent, 1 = opaque) used to solve an issue in Safari                                                                                                                                                                                                                           |
+
+## Examples
+
+### Responsiveness
+
+To create a responsive loader that will follow its parent container width, use only the `viewBox` attribute to set the ratio:
+
+```vue
+<ContentLoader viewBox="0 0 300 200">
+  <!-- ... -->
+</ContentLoader>
+```
+
+To create a loader with fixed dimensions, use `width` and `height` attributes:
+
+```vue
+<ContentLoader width="300" height="200">
+  <!-- ... -->
+</ContentLoader>
+```
+
+Note: the exact behavior might be different depending on the CSS you apply to SVG elements.
 
 ## Credits
 
