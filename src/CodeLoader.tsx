@@ -1,7 +1,8 @@
+import { defineComponent } from 'vue'
 import ContentLoader from './ContentLoader'
 
-const CodeLoader = (props, { attrs }) => {
-  return (
+const CodeLoader = defineComponent((props, { attrs }) => {
+  return () => (
     <ContentLoader {...attrs}>
       <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
       <rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
@@ -17,6 +18,6 @@ const CodeLoader = (props, { attrs }) => {
       <rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
     </ContentLoader>
   )
-}
+})
 
 export default CodeLoader

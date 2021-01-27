@@ -1,7 +1,8 @@
+import { defineComponent } from 'vue'
 import ContentLoader from './ContentLoader'
 
-const BulletListLoader = (props, { attrs }) => {
-  return (
+const BulletListLoader = defineComponent((props, { attrs }) => {
+  return () => (
     <ContentLoader {...attrs}>
       <circle cx="10" cy="20" r="8" />
       <rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
@@ -13,6 +14,6 @@ const BulletListLoader = (props, { attrs }) => {
       <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
     </ContentLoader>
   )
-}
+})
 
 export default BulletListLoader

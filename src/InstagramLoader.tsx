@@ -1,7 +1,8 @@
+import { defineComponent } from 'vue'
 import ContentLoader from './ContentLoader'
 
-const InstagramLoader = (props, { attrs }) => {
-  return (
+const InstagramLoader = defineComponent((props, { attrs }) => {
+  return () => (
     <ContentLoader {...attrs} viewBox="0 0 400 480">
       <circle cx="30" cy="30" r="30" />
 
@@ -10,6 +11,6 @@ const InstagramLoader = (props, { attrs }) => {
       <rect x="0" y="70" rx="5" ry="5" width="400" height="400" />
     </ContentLoader>
   )
-}
+})
 
 export default InstagramLoader
