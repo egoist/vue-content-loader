@@ -53,12 +53,7 @@ export default {
     },
 
     currentComponent() {
-      if (this.current) {
-        const { story } = this.current
-        return typeof story.component === 'function'
-          ? story.component()
-          : story.component
-      }
+      return this.current?.story.component;
     },
 
     currentTitle() {
