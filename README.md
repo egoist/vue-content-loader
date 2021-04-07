@@ -20,7 +20,7 @@ This is a Vue port for [react-content-loader](https://github.com/danilowoz/react
 
 ## Install
 
-⚠️ For Vue 2, use `vue-content-loader@^0.2` instead.
+⚠️ **The latest version is compatible with Vue 3 only.** For Vue 2 & Nuxt 2, use `vue-content-loader@^0.2` instead.
 
 With npm:
 
