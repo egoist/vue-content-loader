@@ -1815,9 +1815,9 @@
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
 "@types/poi@^12.5.2":
-  version "12.5.2"
-  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.2.tgz#9f276a6e8d3760ce407c922d3beb4cca216cb714"
-  integrity sha512-M8tO9xQt0lLUIcXRiLWfMG17UQxMfcQZ6Ndn61/GdKmmNSprvIlTTtuznOP6FZDQKht3w8iV9wQu8IHS7C4uZw==
+  version "12.5.3"
+  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.3.tgz#bada294300e0abfd42d140b332c93d684146ab71"
+  integrity sha512-3PV5SGfm2Tu+b/X5JUULeukYsvP3rjzUs+eaQhOi8HLgn2VH71AEsnoWRTsPfeEQDh69Smy0LSKZ1KVDN4HnoQ==
   dependencies:
     "@types/html-webpack-plugin" "*"
     "@types/webpack" "^4"
