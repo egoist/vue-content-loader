@@ -10140,9 +10140,9 @@ vue-loader@^15.4.2:
     vue-style-loader "^4.1.0"
 
 vue-loader@^16.3.0:
-  version "16.3.0"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-16.3.0.tgz#2f195e4ba0fb0e263596d6830df17d1a36e8936c"
-  integrity sha512-UDgni/tUVSdwHuQo+vuBmEgamWx88SuSlEb5fgdvHrlJSPB9qMBRF6W7bfPWSqDns425Gt1wxAUif+f+h/rWjg==
+  version "16.3.1"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-16.3.1.tgz#5b675ae28ac97080111e93b26d22adca36dd57aa"
+  integrity sha512-QTtXgdqQ+4G3d8dmhnnfJSiKKHQtp53XiivSYAvAqNCOufL9aK0DYOc9MW9MSy7Xzj/1qdcghb28zKhOPvQYqQ==
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
