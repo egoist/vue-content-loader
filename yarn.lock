@@ -1773,19 +1773,10 @@
     "@types/tapable" "*"
     "@types/webpack" "*"
 
-"@types/http-proxy-middleware@*":
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/@types/http-proxy-middleware/-/http-proxy-middleware-0.19.2.tgz#1c44b96487cb2f333102b762c56a8f02241e85bd"
-  integrity sha512-aXcAs2VEaiHwlFlEqMJ+sNSFCO+wuWXcvdBk5Un7f0tUv1eTIIAmkd4S5D/Yi5JI0xofPpm9h3017TngbrLh7A==
-  dependencies:
-    "@types/connect" "*"
-    "@types/http-proxy" "*"
-    "@types/node" "*"
-
-"@types/http-proxy@*":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.0.tgz#baf82ff6aa2723fd29f90e3ba1384e665006863e"
-  integrity sha512-l+s0IoxSHqhLFJPDHRfO235kgrCkvFD8JmdV/T9C4BKBYPIjrQopGFH4r7h2e3jQqgJRCthRCAZIxDoFnj1zwQ==
+"@types/http-proxy@^1.17.5":
+  version "1.17.7"
+  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.7.tgz#30ea85cc2c868368352a37f0d0d3581e24834c6f"
+  integrity sha512-9hdj6iXH64tHSLTY+Vt2eYOGzSogC+JQ2H7bdPWkuh7KXP5qLllWx++t+K9Wk556c3dkDdPws/SpMRi0sdCT1w==
   dependencies:
     "@types/node" "*"
 
@@ -1827,13 +1818,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.8.tgz#551466be11b2adc3f3d47156758f610bd9f6b1d8"
 
 "@types/poi@^12.5.2":
-  version "12.5.2"
-  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.2.tgz#9f276a6e8d3760ce407c922d3beb4cca216cb714"
-  integrity sha512-M8tO9xQt0lLUIcXRiLWfMG17UQxMfcQZ6Ndn61/GdKmmNSprvIlTTtuznOP6FZDQKht3w8iV9wQu8IHS7C4uZw==
+  version "12.5.4"
+  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.4.tgz#c85ee15bcedbe1358fb89f960c64b0367de972b8"
+  integrity sha512-k4BpvMNPAzJ+s9OKM4Hkj5+H8RylwXcspoQNn1I5H01tEcNdlVVgl7asB0doO2rZ2Sy0hRy4N3/xE0XcxnBCZg==
   dependencies:
     "@types/html-webpack-plugin" "*"
     "@types/webpack" "^4"
-    "@types/webpack-dev-server" "*"
+    "@types/webpack-dev-server" "^3"
     cac "~6.4.2"
     webpack-chain "^5.2.4"
 
@@ -1899,16 +1890,16 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/webpack-dev-server@*":
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.6.tgz#a674bcdbe045390e6301977790d465f4aeb5b1c0"
-  integrity sha512-fysTHPetk7emf4XPj+GCbwGy56JTIUXWH7FuSABctCU2i+pczOD9bbUqd1+vT18WhqEqsr5v8SPshvm/FL3yDw==
+"@types/webpack-dev-server@^3":
+  version "3.11.6"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.11.6.tgz#d8888cfd2f0630203e13d3ed7833a4d11b8a34dc"
+  integrity sha512-XCph0RiiqFGetukCTC3KVnY1jwLcZ84illFRMbyFzCcWl90B/76ew0tSqF46oBhnLC4obNDG7dMO0JfTN0MgMQ==
   dependencies:
     "@types/connect-history-api-fallback" "*"
     "@types/express" "*"
-    "@types/http-proxy-middleware" "*"
     "@types/serve-static" "*"
-    "@types/webpack" "*"
+    "@types/webpack" "^4"
+    http-proxy-middleware "^1.0.0"
 
 "@types/webpack-sources@*":
   version "2.1.0"
@@ -5195,7 +5186,18 @@ http-proxy-middleware@0.19.1:
     lodash "^4.17.11"
     micromatch "^3.1.10"
 
-http-proxy@^1.17.0:
+http-proxy-middleware@^1.0.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.3.1.tgz#43700d6d9eecb7419bf086a128d0f7205d9eb665"
+  integrity sha512-13eVVDYS4z79w7f1+NPllJtOQFx/FdUW4btIvVRMaRlUY9VGstAbo5MOhLEuUgZFRHn3x50ufn25zkj/boZnEg==
+  dependencies:
+    "@types/http-proxy" "^1.17.5"
+    http-proxy "^1.18.1"
+    is-glob "^4.0.1"
+    is-plain-obj "^3.0.0"
+    micromatch "^4.0.2"
+
+http-proxy@^1.17.0, http-proxy@^1.18.1:
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
   integrity sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==
@@ -5583,6 +5585,11 @@ is-path-inside@^2.1.0:
 is-plain-obj@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
+
+is-plain-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-3.0.0.tgz#af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7"
+  integrity sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==
 
 is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
@@ -6566,7 +6573,7 @@ micromatch@^3.1.8:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-micromatch@^4.0.4:
+micromatch@^4.0.2, micromatch@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.4.tgz#896d519dfe9db25fce94ceb7a500919bf881ebf9"
   integrity sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==
