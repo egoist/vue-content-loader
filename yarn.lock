@@ -1896,9 +1896,9 @@
   integrity sha512-uwX0Qs2e6kdF+WmxwuxJxOnKs/wEkMArtYpHSm7W+VY/23Tl8syMRyjnzEeXrNCAP0/8HZxEGkHJsjPEDNRuHw==
 
 "@vue/test-utils@^2.0.0-rc.9":
-  version "2.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-rc.12.tgz#716a84d915d6045640eeac416cc2a2acd514e06e"
-  integrity sha512-G9BGRYlfwWjhorGjnpniC3hcYn1pCG2NqKG68fdUpk3DgWKordZ+BsEFD/SAmKdTZVMCY1huFwY3XAbPc+AgRw==
+  version "2.0.0-rc.14"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-rc.14.tgz#9da1be7b0e365ff5f945677da17bf6c8a7a83abd"
+  integrity sha512-gmaeKqRCCMfxUtWN2L9fb9mYW5YocNc9KPj6F5uwlyXevlKELi40Oaz0PICYjzHI+7+dC4bV5Dg6Vjnf51VjvQ==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
