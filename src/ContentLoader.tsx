@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import uid from './uid'
 
 export default defineComponent({
@@ -52,11 +52,17 @@ export default defineComponent({
   },
 
   setup(props) {
-    const idClip = props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
-    const idGradient = props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
-    const width = props.width ?? 400
-    const height = props.height ?? 130
-    const computedViewBox = props.viewBox ?? `0 0 ${width} ${height}`
+    const idClip = computed(() =>
+      props.uniqueKey ? `${props.uniqueKey}-idClip` : uid()
+    )
+    const idGradient = computed(() =>
+      props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
+    )
+    const width = computed(() => props.width ?? 400)
+    const height = computed(() => props.height ?? 130)
+    const computedViewBox = computed(
+      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
+    )
 
     return {
       idClip,

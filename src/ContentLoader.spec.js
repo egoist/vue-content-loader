@@ -1,4 +1,6 @@
+import 'regenerator-runtime/runtime'
 import { mount } from '@vue/test-utils'
+
 import ContentLoader from './ContentLoader'
 
 describe('ContentLoader', () => {
@@ -199,5 +201,21 @@ describe('ContentLoader', () => {
 
     expect(wrapper.find('svg').classes()).toEqual(['loader'])
     expect(wrapper.find('svg').attributes()).toMatchObject({ id: 'loader' })
+  })
+
+  it('updates the computedViewBox when props change', async () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        viewBox: '0 0 100 100',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 100 100')
+
+    await wrapper.setProps({ viewBox: '0 0 200 200' })
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 200 200')
+
+    await wrapper.setProps({ viewBox: null, width: 50, height: 100 })
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 50 100')
   })
 })
