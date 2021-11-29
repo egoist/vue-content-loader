@@ -6,49 +6,49 @@ export default defineComponent({
 
   props: {
     width: {
-      type: [Number, String]
+      type: [Number, String],
     },
     height: {
-      type: [Number, String]
+      type: [Number, String],
     },
     viewBox: {
-      type: String
+      type: String,
     },
     preserveAspectRatio: {
       type: String,
-      default: 'xMidYMid meet'
+      default: 'xMidYMid meet',
     },
     speed: {
       type: Number,
-      default: 2
+      default: 2,
     },
     baseUrl: {
       type: String,
-      default: ''
+      default: '',
     },
     primaryColor: {
       type: String,
-      default: '#f9f9f9'
+      default: '#f9f9f9',
     },
     secondaryColor: {
       type: String,
-      default: '#ecebeb'
+      default: '#ecebeb',
     },
     primaryOpacity: {
       type: Number,
-      default: 1
+      default: 1,
     },
     secondaryOpacity: {
       type: Number,
-      default: 1
+      default: 1,
     },
     uniqueKey: {
-      type: String
+      type: String,
     },
     animate: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   setup(props) {
@@ -61,7 +61,7 @@ export default defineComponent({
     return {
       idClip,
       idGradient,
-      computedViewBox
+      computedViewBox,
     }
   },
 
@@ -139,5 +139,5 @@ export default defineComponent({
         </defs>
       </svg>
     )
-  }
+  },
 })

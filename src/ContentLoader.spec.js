@@ -23,8 +23,8 @@ describe('ContentLoader', () => {
       props: {
         width: 300,
         height: 200,
-        preserveAspectRatio: 'xMaxYMid slice'
-      }
+        preserveAspectRatio: 'xMaxYMid slice',
+      },
     })
 
     expect(wrapper.find('svg').attributes()).toEqual({
@@ -32,7 +32,7 @@ describe('ContentLoader', () => {
       height: '200',
       preserveAspectRatio: 'xMaxYMid slice',
       version: '1.1',
-      viewBox: '0 0 300 200'
+      viewBox: '0 0 300 200',
     })
   })
 
@@ -41,8 +41,8 @@ describe('ContentLoader', () => {
       props: {
         width: 300,
         height: 200,
-        preserveAspectRatio: 'xMaxYMid slice'
-      }
+        preserveAspectRatio: 'xMaxYMid slice',
+      },
     })
 
     expect(wrapper.find('svg').attributes()).toEqual({
@@ -50,7 +50,7 @@ describe('ContentLoader', () => {
       height: '200',
       preserveAspectRatio: 'xMaxYMid slice',
       version: '1.1',
-      viewBox: '0 0 300 200'
+      viewBox: '0 0 300 200',
     })
   })
 
@@ -63,7 +63,7 @@ describe('ContentLoader', () => {
       x: '0',
       y: '0',
       width: '100%',
-      height: '100%'
+      height: '100%',
     })
   })
 
@@ -71,7 +71,7 @@ describe('ContentLoader', () => {
     const wrapper = mount(ContentLoader)
 
     expect(wrapper.find('defs clipPath').attributes()).toEqual({
-      id: wrapper.vm.idClip
+      id: wrapper.vm.idClip,
     })
   })
 
@@ -79,7 +79,7 @@ describe('ContentLoader', () => {
     const wrapper = mount(ContentLoader)
 
     expect(wrapper.find('defs linearGradient').attributes()).toEqual({
-      id: wrapper.vm.idGradient
+      id: wrapper.vm.idGradient,
     })
   })
 
@@ -91,17 +91,17 @@ describe('ContentLoader', () => {
     expect(stops[0].attributes()).toEqual({
       offset: '0%',
       'stop-color': '#f9f9f9',
-      'stop-opacity': '1'
+      'stop-opacity': '1',
     })
     expect(stops[1].attributes()).toEqual({
       offset: '50%',
       'stop-color': '#ecebeb',
-      'stop-opacity': '1'
+      'stop-opacity': '1',
     })
     expect(stops[2].attributes()).toEqual({
       offset: '100%',
       'stop-color': '#f9f9f9',
-      'stop-opacity': '1'
+      'stop-opacity': '1',
     })
   })
 
@@ -114,27 +114,27 @@ describe('ContentLoader', () => {
       attributeName: 'offset',
       values: '-2; 1',
       dur: '2s',
-      repeatCount: 'indefinite'
+      repeatCount: 'indefinite',
     })
     expect(animations[1].attributes()).toEqual({
       attributeName: 'offset',
       values: '-1.5; 1.5',
       dur: '2s',
-      repeatCount: 'indefinite'
+      repeatCount: 'indefinite',
     })
     expect(animations[2].attributes()).toEqual({
       attributeName: 'offset',
       values: '-1; 2',
       dur: '2s',
-      repeatCount: 'indefinite'
+      repeatCount: 'indefinite',
     })
   })
 
   it('does not animate if animate prop is false', () => {
     const wrapper = mount(ContentLoader, {
       props: {
-        animate: false
-      }
+        animate: false,
+      },
     })
 
     expect(wrapper.findAll('defs linearGradient animate').length).toBe(0)
@@ -149,15 +149,15 @@ describe('ContentLoader', () => {
       rx: '5',
       ry: '5',
       width: '100%',
-      height: '100%'
+      height: '100%',
     })
   })
 
   it('outputs the default slot within the clipPath', () => {
     const wrapper = mount(ContentLoader, {
       slots: {
-        default: '<circle cx="30" cy="30" r="30" />'
-      }
+        default: '<circle cx="30" cy="30" r="30" />',
+      },
     })
 
     expect(wrapper.find('defs clipPath circle').html()).toEqual(
@@ -168,21 +168,21 @@ describe('ContentLoader', () => {
   it('use the baseUrl to link the gradient & clip path', () => {
     const wrapper = mount(ContentLoader, {
       props: {
-        baseUrl: '/path'
-      }
+        baseUrl: '/path',
+      },
     })
 
     expect(wrapper.find('rect').attributes()).toMatchObject({
       style: `fill: url(/path#${wrapper.vm.idGradient});`,
-      'clip-path': `url(/path#${wrapper.vm.idClip})`
+      'clip-path': `url(/path#${wrapper.vm.idClip})`,
     })
   })
 
   it('use the uniqueKey to generate static IDs', () => {
     const wrapper = mount(ContentLoader, {
       props: {
-        uniqueKey: 'unique'
-      }
+        uniqueKey: 'unique',
+      },
     })
 
     expect(wrapper.vm.idClip).toEqual('unique-idClip')
@@ -193,8 +193,8 @@ describe('ContentLoader', () => {
     const wrapper = mount(ContentLoader, {
       props: {
         class: 'loader',
-        id: 'loader'
-      }
+        id: 'loader',
+      },
     })
 
     expect(wrapper.find('svg').classes()).toEqual(['loader'])

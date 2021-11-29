@@ -2,13 +2,13 @@ import { createApp, h } from 'vue'
 import { createRouter, createWebHashHistory, RouterView } from 'vue-router'
 import StorybookRoot from './Storybook.vue'
 
-export const createStorybook = opts => new Storybook(opts)
+export const createStorybook = (opts) => new Storybook(opts)
 
 class Storybook {
   constructor({ title }) {
     this.sections = []
     this.site = {
-      title
+      title,
     }
   }
 
@@ -20,15 +20,15 @@ class Storybook {
           path: '/:pathMatch(.*)*',
           component: StorybookRoot,
           props: {
-            sections: this.sections.map(section => section.toObject()),
-            site: this.site
-          }
-        }
-      ]
+            sections: this.sections.map((section) => section.toObject()),
+            site: this.site,
+          },
+        },
+      ],
     })
 
     const vm = createApp({
-      render: () => h(RouterView)
+      render: () => h(RouterView),
     })
       .use(router)
       .mount(target)
@@ -57,7 +57,7 @@ class Section {
   toObject() {
     return {
       title: this.title,
-      stories: this.stories
+      stories: this.stories,
     }
   }
 }

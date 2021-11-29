@@ -11,25 +11,27 @@ describe.each([
   ['CodeLoader', CodeLoader],
   ['FacebookLoader', FacebookLoader],
   ['ListLoader', ListLoader],
-  ['InstagramLoader', InstagramLoader]
+  ['InstagramLoader', InstagramLoader],
 ])('%s', (name, component) => {
   it('renders its shapes', () => {
     const wrapper = mount(component)
 
-    expect(wrapper.findAll('clipPath > *').map(c => c.html())).toMatchSnapshot()
+    expect(
+      wrapper.findAll('clipPath > *').map((c) => c.html())
+    ).toMatchSnapshot()
   })
 
   it('forwards attributes to ContentLoader', () => {
     const wrapper = mount(component, {
       props: {
         id: 'loader',
-        class: 'loader'
-      }
+        class: 'loader',
+      },
     })
 
     expect(wrapper.attributes()).toMatchObject({
       id: 'loader',
-      class: 'loader'
+      class: 'loader',
     })
   })
 })

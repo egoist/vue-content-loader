@@ -50,8 +50,8 @@ import { ContentLoader } from 'vue-content-loader'
 
 export default {
   components: {
-    ContentLoader
-  }
+    ContentLoader,
+  },
 }
 </script>
 ```
@@ -65,7 +65,7 @@ import {
   CodeLoader,
   BulletListLoader,
   InstagramLoader,
-  ListLoader
+  ListLoader,
 } from 'vue-content-loader'
 ```
 

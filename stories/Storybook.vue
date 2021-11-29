@@ -15,7 +15,7 @@
                 `story-title`,
                 $route.query.story === story.title &&
                   $route.query.section === section.title &&
-                  `is-active`
+                  `is-active`,
               ]"
               v-for="(story, storyIndex) in section.stories"
               :key="storyIndex"
@@ -44,7 +44,7 @@ export default {
             if (story.title === query.story) {
               return {
                 section,
-                story
+                story,
               }
             }
           }
@@ -53,7 +53,7 @@ export default {
     },
 
     currentComponent() {
-      return this.current?.story.component;
+      return this.current?.story.component
     },
 
     currentTitle() {
@@ -62,7 +62,7 @@ export default {
         return `${story.title} ${section.title} - - ${this.site.title}`
       }
       return this.site.title
-    }
+    },
   },
 
   watch: {
@@ -70,9 +70,9 @@ export default {
       handler(title) {
         document.title = title
       },
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 }
 </script>
 

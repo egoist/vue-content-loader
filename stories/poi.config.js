@@ -5,8 +5,8 @@ const path = require('path')
 const config = {
   entry: path.join(__dirname, 'index.js'),
   output: {
-    dir: path.join(__dirname, 'dist')
-  }
+    dir: path.join(__dirname, 'dist'),
+  },
 }
 
 module.exports = config

@@ -5,7 +5,7 @@ import {
   CodeLoader,
   BulletListLoader,
   InstagramLoader,
-  ListLoader
+  ListLoader,
 } from '../src'
 
 const Container = {
@@ -16,7 +16,7 @@ const Container = {
         {this.$slots.default()}
       </div>
     )
-  }
+  },
 }
 
 const MyLoader = {
@@ -33,15 +33,15 @@ const MyLoader = {
         <circle cx="35" cy="35" r="35" />
       </ContentLoader>
     )
-  }
+  },
 }
 
 const storybook = createStorybook({
-  title: 'vue-content-loader'
+  title: 'vue-content-loader',
 })
 
 const section = storybook.addSection({
-  title: 'ContentLoader'
+  title: 'ContentLoader',
 })
 
 section
@@ -54,8 +54,8 @@ section
             <FacebookLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'instagram style',
@@ -66,8 +66,8 @@ section
             <InstagramLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'code style',
@@ -78,8 +78,8 @@ section
             <CodeLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'list style',
@@ -90,8 +90,8 @@ section
             <ListLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'bullet list style',
@@ -102,8 +102,8 @@ section
             <BulletListLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'custom style',
@@ -114,8 +114,8 @@ section
             <MyLoader />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'className',
@@ -126,8 +126,8 @@ section
             <ContentLoader class="random-className" />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'width and height',
@@ -138,8 +138,8 @@ section
             <ContentLoader width={200} height={100} />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'custom viewBox',
@@ -157,8 +157,8 @@ section
             </ContentLoader>
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'unique-key: for SSR',
@@ -169,8 +169,8 @@ section
             <ContentLoader uniqueKey="unique-key" />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
   .addStory({
     title: 'no animation',
@@ -181,8 +181,8 @@ section
             <FacebookLoader animate={false} />
           </Container>
         )
-      }
-    }
+      },
+    },
   })
 
 storybook.open('#app')
