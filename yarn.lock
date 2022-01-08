@@ -1675,13 +1675,13 @@
   integrity sha512-+hQX+WyJAOne7Fh3zF5CxPemILIbuhNcqHHodzK9caYOLnC8pD5efmPleRnw0z++LfKUC/sVNMwk0Gap+B0baA==
 
 "@types/poi@^12.5.2":
-  version "12.5.4"
-  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.4.tgz#c85ee15bcedbe1358fb89f960c64b0367de972b8"
-  integrity sha512-k4BpvMNPAzJ+s9OKM4Hkj5+H8RylwXcspoQNn1I5H01tEcNdlVVgl7asB0doO2rZ2Sy0hRy4N3/xE0XcxnBCZg==
+  version "12.5.5"
+  resolved "https://registry.yarnpkg.com/@types/poi/-/poi-12.5.5.tgz#f72394f616fb852b940aa0d1349c0a6e9e21fb16"
+  integrity sha512-fLq+rsf/i1e/hMiD2Hfi/ohklVv418/SuLEvRgv9F0NznR4KjSaEGFwyJFO5iOD7duZMTQLGfkZxadkX4FT7Pw==
   dependencies:
     "@types/html-webpack-plugin" "*"
     "@types/webpack" "^4"
-    "@types/webpack-dev-server" "^3"
+    "@types/webpack-dev-server" "3"
     cac "~6.4.2"
     webpack-chain "^5.2.4"
 
@@ -1757,7 +1757,7 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/webpack-dev-server@^3":
+"@types/webpack-dev-server@3":
   version "3.11.6"
   resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.11.6.tgz#d8888cfd2f0630203e13d3ed7833a4d11b8a34dc"
   integrity sha512-XCph0RiiqFGetukCTC3KVnY1jwLcZ84illFRMbyFzCcWl90B/76ew0tSqF46oBhnLC4obNDG7dMO0JfTN0MgMQ==
