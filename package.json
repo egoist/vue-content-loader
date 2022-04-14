@@ -35,7 +35,7 @@
     "@babel/preset-env": "7.16.11",
     "@types/poi": "12.5.5",
     "@vue/babel-plugin-jsx": "1.1.1",
-    "@vue/compiler-sfc": "3.2.32",
+    "@vue/compiler-sfc": "3.2.33",
     "@vue/test-utils": "2.0.0-rc.20",
     "babel-jest": "27.5.1",
     "bili": "5.0.5",
@@ -45,7 +45,7 @@
     "regenerator-runtime": "0.13.9",
     "rollup-plugin-typescript2": "0.31.2",
     "typescript": "4.6.3",
-    "vue": "3.2.32",
+    "vue": "3.2.33",
     "vue-loader": "17.0.0",
     "vue-router": "4.0.14"
   },
