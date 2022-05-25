@@ -31,8 +31,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.18.0",
-    "@babel/preset-env": "7.18.0",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
     "@types/poi": "12.5.5",
     "@vue/babel-plugin-jsx": "1.1.1",
     "@vue/compiler-sfc": "3.2.36",
