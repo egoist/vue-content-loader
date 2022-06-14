@@ -41,7 +41,7 @@
     "bili": "5.0.5",
     "jest": "27.5.1",
     "poi": "12.10.3",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "regenerator-runtime": "0.13.9",
     "rollup-plugin-typescript2": "0.32.1",
     "typescript": "4.7.3",
