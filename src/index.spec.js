@@ -57,12 +57,12 @@ describe('ContentLoader', () => {
     const wrapper = mount(ContentLoader, {
       props: {
         width: '100px',
-        height: '50px',
+        height: '50PX',
       },
     })
     expect(wrapper.attributes()).toMatchObject({
       width: '100px',
-      height: '50px',
+      height: '50PX',
       viewBox: '0 0 100 50',
     })
   })
