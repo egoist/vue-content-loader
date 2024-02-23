@@ -1,4 +1,5 @@
 import { defineComponent, computed } from 'vue'
+import { isNumberLike } from './helpers'
 import uid from './uid'
 
 export default defineComponent({
@@ -58,11 +59,11 @@ export default defineComponent({
     const idGradient = computed(() =>
       props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
     )
-    const width = computed(() => props.width ?? 400)
-    const height = computed(() => props.height ?? 130)
-    const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
-    )
+    const computedViewBox = computed(() => {
+      const width = isNumberLike(props.width) ? props.width : 400
+      const height = isNumberLike(props.height) ? props.height : 130
+      return props.viewBox ?? `0 0 ${width} ${height}`
+    })
 
     return {
       idClip,
