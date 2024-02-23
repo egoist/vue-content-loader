@@ -1,4 +1,5 @@
 import { defineComponent, computed } from 'vue'
+import { generateViewBox } from './helpers'
 import uid from './uid'
 
 export default defineComponent({
@@ -58,10 +59,8 @@ export default defineComponent({
     const idGradient = computed(() =>
       props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
     )
-    const width = computed(() => props.width ?? 400)
-    const height = computed(() => props.height ?? 130)
     const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
+      () => props.viewBox ?? generateViewBox(props.width, props.height)
     )
 
     return {
