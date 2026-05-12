@@ -1,6 +1,20 @@
 import { defineComponent, computed } from 'vue'
 import uid from './uid'
 
+function parseViewBoxDimension(
+  value,
+  fallback
+) {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value !== 'string') return fallback
+
+  const trimmed = value.trim()
+  if (!/^-?\d+(\.\d+)?$/.test(trimmed)) return fallback
+
+  const parsed = Number(trimmed)
+  return Number.isFinite(parsed) ? parsed : fallback
+}
+
 export default defineComponent({
   name: 'ContentLoader',
 
@@ -58,10 +72,14 @@ export default defineComponent({
     const idGradient = computed(() =>
       props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
     )
-    const width = computed(() => props.width ?? 400)
-    const height = computed(() => props.height ?? 130)
+    const viewBoxWidth = computed(() =>
+      parseViewBoxDimension(props.width, 400)
+    )
+    const viewBoxHeight = computed(() =>
+      parseViewBoxDimension(props.height, 130)
+    )
     const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
+      () => props.viewBox ?? `0 0 ${viewBoxWidth.value} ${viewBoxHeight.value}`
     )
 
     return {

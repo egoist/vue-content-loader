@@ -38,6 +38,32 @@ describe('ContentLoader', () => {
     })
   })
 
+  it('falls back to default viewBox when width/height are non-numeric strings', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '100%',
+        height: '100%',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes()).toMatchObject({
+      width: '100%',
+      height: '100%',
+      viewBox: '0 0 400 130',
+    })
+  })
+
+  it('uses numeric width/height when provided as strings', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '300',
+        height: '200',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 300 200')
+  })
+
   it('has viewbox, version and aspect ratio attributes on svg element', () => {
     const wrapper = mount(ContentLoader, {
       props: {
