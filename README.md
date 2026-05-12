@@ -96,6 +96,7 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 | height              | number, string |                                          | SVG height in pixels without unit                                                                                                                                                                                                                                                                           |
 | viewBox             | string         | `'0 0 ${width ?? 400} ${height ?? 130}'` | See [SVG viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute                                                                                                                                                                                                             |
 | preserveAspectRatio | string         | `'xMidYMid meet'`                        | See [SVG preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute                                                                                                                                                                                     |
+| responsive          | boolean        | `false`                                  | Render the SVG at `width="100%"` and `height="auto"` while keeping the drawing ratio from `viewBox`                                                                                                                                                                                                         |
 | speed               | number         | `2`                                      | Animation speed                                                                                                                                                                                                                                                                                             |
 | primaryColor        | string         | `'#f9f9f9'`                              | Background color                                                                                                                                                                                                                                                                                            |
 | secondaryColor      | string         | `'#ecebeb'`                              | Highlight color                                                                                                                                                                                                                                                                                             |
@@ -109,10 +110,10 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 
 ### Responsiveness
 
-To create a responsive loader that will follow its parent container width, use only the `viewBox` attribute to set the ratio:
+To create a responsive loader that will follow its parent container width, enable the `responsive` prop and use the `viewBox` attribute to set the drawing ratio:
 
 ```vue
-<ContentLoader viewBox="0 0 300 200">
+<ContentLoader responsive viewBox="0 0 300 200">
   <!-- ... -->
 </ContentLoader>
 ```
