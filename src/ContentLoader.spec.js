@@ -11,6 +11,7 @@ describe('ContentLoader', () => {
     expect(wrapper.vm.height).toBe(undefined)
     expect(wrapper.vm.speed).toBe(2)
     expect(wrapper.vm.preserveAspectRatio).toBe('xMidYMid meet')
+    expect(wrapper.vm.responsive).toBe(false)
     expect(wrapper.vm.baseUrl).toBe('')
     expect(wrapper.vm.primaryColor).toBe('#f9f9f9')
     expect(wrapper.vm.secondaryColor).toBe('#ecebeb')
@@ -38,19 +39,18 @@ describe('ContentLoader', () => {
     })
   })
 
-  it('has viewbox, version and aspect ratio attributes on svg element', () => {
+  it('renders a responsive svg while keeping the drawing viewBox', () => {
     const wrapper = mount(ContentLoader, {
       props: {
-        width: 300,
-        height: 200,
-        preserveAspectRatio: 'xMaxYMid slice',
+        responsive: true,
+        viewBox: '0 0 300 200',
       },
     })
 
     expect(wrapper.find('svg').attributes()).toEqual({
-      width: '300',
-      height: '200',
-      preserveAspectRatio: 'xMaxYMid slice',
+      width: '100%',
+      height: 'auto',
+      preserveAspectRatio: 'xMidYMid meet',
       version: '1.1',
       viewBox: '0 0 300 200',
     })

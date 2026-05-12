@@ -18,6 +18,10 @@ export default defineComponent({
       type: String,
       default: 'xMidYMid meet',
     },
+    responsive: {
+      type: Boolean,
+      default: false,
+    },
     speed: {
       type: Number,
       default: 2,
@@ -63,19 +67,27 @@ export default defineComponent({
     const computedViewBox = computed(
       () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
     )
+    const computedWidth = computed(() =>
+      props.responsive ? '100%' : props.width
+    )
+    const computedHeight = computed(() =>
+      props.responsive ? 'auto' : props.height
+    )
 
     return {
       idClip,
       idGradient,
       computedViewBox,
+      computedWidth,
+      computedHeight,
     }
   },
 
   render() {
     return (
       <svg
-        width={this.width}
-        height={this.height}
+        width={this.computedWidth}
+        height={this.computedHeight}
         viewBox={this.computedViewBox}
         version="1.1"
         preserveAspectRatio={this.preserveAspectRatio}
