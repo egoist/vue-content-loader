@@ -60,9 +60,12 @@ export default defineComponent({
     )
     const width = computed(() => props.width ?? 400)
     const height = computed(() => props.height ?? 130)
-    const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
-    )
+    const computedViewBox = computed(() => {
+      if (props.viewBox) return props.viewBox
+      const w = typeof width.value === 'string' ? 400 : width.value
+      const h = typeof height.value === 'string' ? 130 : height.value
+      return `0 0 ${w} ${h}`
+    })
 
     return {
       idClip,
