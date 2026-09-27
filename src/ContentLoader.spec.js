@@ -218,4 +218,67 @@ describe('ContentLoader', () => {
     await wrapper.setProps({ viewBox: null, width: 50, height: 100 })
     expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 50 100')
   })
+
+  it('forwards CSS-unit strings to the svg width and height attributes', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '100%',
+        height: '30vw',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('width')).toBe('100%')
+    expect(wrapper.find('svg').attributes('height')).toBe('30vw')
+  })
+
+  it('keeps the viewBox numeric when width or height is a non-pixel unit', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '100%',
+        height: 130,
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 400 130')
+  })
+
+  it('defaults relative-unit dimensions in the viewBox to the fallback values', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '50vw',
+        height: '100%',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 400 130')
+  })
+
+  it('parses pixel strings into the numeric viewBox coordinate', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '500px',
+        height: '200px',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes('viewBox')).toBe('0 0 500 200')
+  })
+
+  it('lets an explicit viewBox control the ratio with CSS-unit sizes', () => {
+    const wrapper = mount(ContentLoader, {
+      props: {
+        width: '100%',
+        height: 'auto',
+        viewBox: '0 0 300 200',
+      },
+    })
+
+    expect(wrapper.find('svg').attributes()).toEqual({
+      width: '100%',
+      height: 'auto',
+      preserveAspectRatio: 'xMidYMid meet',
+      version: '1.1',
+      viewBox: '0 0 300 200',
+    })
+  })
 })

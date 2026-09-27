@@ -92,9 +92,9 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 
 | Prop                | Type           | Default                                  | Description                                                                                                                                                                                                                                                                                                 |
 | ------------------- | -------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| width               | number, string |                                          | SVG width in pixels without unit                                                                                                                                                                                                                                                                            |
-| height              | number, string |                                          | SVG height in pixels without unit                                                                                                                                                                                                                                                                           |
-| viewBox             | string         | `'0 0 ${width ?? 400} ${height ?? 130}'` | See [SVG viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute                                                                                                                                                                                                             |
+| width               | number, string |                                          | SVG width. A number is interpreted as pixels without a unit; a string accepts any CSS length or percentage (e.g. `'100%'`, `'50vw'`, `'20rem'`), which is useful for responsive loaders.                                                                                                                                                 |
+| height              | number, string |                                          | SVG height. Same behavior as `width` (a number is pixels; a string accepts any CSS length or percentage).                                                                                                                                                                                                                             |
+| viewBox             | string         | `'0 0 ${width ?? 400} ${height ?? 130}'` | See [SVG viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute. When `width`/`height` are set to a non-pixel CSS unit (e.g. `'100%'`), only the numeric coordinate (or the defaults `400`/`130` otherwise) is used here so the viewBox stays valid. Pass an explicit `viewBox` to control the ratio. |                                                                                                                                                                                                             |
 | preserveAspectRatio | string         | `'xMidYMid meet'`                        | See [SVG preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute                                                                                                                                                                                     |
 | speed               | number         | `2`                                      | Animation speed                                                                                                                                                                                                                                                                                             |
 | primaryColor        | string         | `'#f9f9f9'`                              | Background color                                                                                                                                                                                                                                                                                            |
@@ -109,10 +109,26 @@ You can also use the [online tool](http://danilowoz.com/create-vue-content-loade
 
 ### Responsiveness
 
-To create a responsive loader that will follow its parent container width, use only the `viewBox` attribute to set the ratio:
+To create a responsive loader that will follow its parent container width, use a percentage or other CSS-unit value for `width` (and optionally `height`):
 
 ```vue
-<ContentLoader viewBox="0 0 300 200">
+<ContentLoader width="100%">
+  <!-- ... -->
+</ContentLoader>
+```
+
+The width and height props accept a number (pixels) or any CSS length/percentage. The value is forwarded to the SVG element, so the loader scales with its container:
+
+```vue
+<ContentLoader :width="'100%'" :height="'30vw'">
+  <!-- ... -->
+</ContentLoader>
+```
+
+To keep the drawing ratio fixed while the loader stretches, set an explicit `viewBox`:
+
+```vue
+<ContentLoader width="100%" viewBox="0 0 300 200">
   <!-- ... -->
 </ContentLoader>
 ```

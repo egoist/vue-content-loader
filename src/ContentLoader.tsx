@@ -60,8 +60,15 @@ export default defineComponent({
     )
     const width = computed(() => props.width ?? 400)
     const height = computed(() => props.height ?? 130)
+    const stripUnit = (value = width.value) => {
+      if (typeof value === 'number') return value
+      const match = /^\d+(\.\d+)?px$/.exec((value ?? '').trim())
+      return match ? parseFloat(match[0]) : undefined
+    }
     const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
+      () =>
+        props.viewBox ??
+        `0 0 ${stripUnit(width.value) ?? 400} ${stripUnit(height.value) ?? 130}`
     )
 
     return {
