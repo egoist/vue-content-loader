@@ -1,6 +1,31 @@
 import { defineComponent, computed } from 'vue'
 import uid from './uid'
 
+/**
+ * Resolve a width/height prop into a numeric viewBox coordinate.
+ * Numbers and bare/px numeric strings are accepted; CSS units (%, vw, rem, …)
+ * fall back so the SVG viewBox stays valid for responsive loaders.
+ */
+export function viewBoxLength(value, fallback) {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value
+  }
+
+  if (typeof value === 'string') {
+    const trimmed = value.trim()
+    if (/^\d+(\.\d+)?$/.test(trimmed)) {
+      return Number(trimmed)
+    }
+
+    const px = /^(\d+(\.\d+)?)px$/i.exec(trimmed)
+    if (px) {
+      return Number(px[1])
+    }
+  }
+
+  return fallback
+}
+
 export default defineComponent({
   name: 'ContentLoader',
 
@@ -58,11 +83,15 @@ export default defineComponent({
     const idGradient = computed(() =>
       props.uniqueKey ? `${props.uniqueKey}-idGradient` : uid()
     )
-    const width = computed(() => props.width ?? 400)
-    const height = computed(() => props.height ?? 130)
-    const computedViewBox = computed(
-      () => props.viewBox ?? `0 0 ${width.value} ${height.value}`
-    )
+    const computedViewBox = computed(() => {
+      if (props.viewBox) {
+        return props.viewBox
+      }
+
+      const w = viewBoxLength(props.width, 400)
+      const h = viewBoxLength(props.height, 130)
+      return `0 0 ${w} ${h}`
+    })
 
     return {
       idClip,
